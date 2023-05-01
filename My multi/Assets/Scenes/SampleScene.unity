@@ -409,7 +409,7 @@ GameObject:
   - component: {fileID: 73952309}
   - component: {fileID: 73952310}
   m_Layer: 0
-  m_Name: Point
+  m_Name: Jasper's Basket
   m_TagString: Hoops
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4060,7 +4060,7 @@ GameObject:
   - component: {fileID: 1400664694}
   - component: {fileID: 1400664695}
   m_Layer: 0
-  m_Name: Point (1)
+  m_Name: Iona's Basket
   m_TagString: Hoops
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
