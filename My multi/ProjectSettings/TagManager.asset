@@ -15,6 +15,7 @@ TagManager:
   - Bullet
   - Timer
   - Game Over
+  - gameType
   layers:
   - Default
   - TransparentFX
