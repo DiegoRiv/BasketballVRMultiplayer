@@ -7471,7 +7471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36e064735aa67104d800f98391709638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 3062159612666844371, guid: 44e4e78535162154d9d2f3c3e3b88f2a, type: 3}
+  playerPrefab: {fileID: 0}
   Hand: {fileID: 2100000, guid: 26033e118717c8d40b3479898b083959, type: 2}
 --- !u!4 &1232577725
 Transform:

@@ -8,13 +8,13 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 {
     public GameObject playerPrefab;
     public Material Hand;
-    Scene sceneName;
+    private int buildI;
 
     void Start()
     {
         PhotonNetwork.ConnectUsingSettings();
         print("Trying to connect to the server");
-        sceneName= SceneManager.GetActiveScene();
+        buildI= SceneManager.GetActiveScene().buildIndex;
     }
 
     public override void OnConnectedToMaster()
@@ -34,7 +34,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         base.OnJoinedRoom();
         print("Joined room");
-        if(sceneName.name=="Lobby")
+        if(buildI==0)
         {
             playerPrefab = PhotonNetwork.Instantiate("Network Player", transform.position, transform.rotation);
         }

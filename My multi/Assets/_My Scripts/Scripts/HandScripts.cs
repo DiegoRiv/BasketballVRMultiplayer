@@ -24,12 +24,13 @@ public class HandScripts : MonoBehaviour
 
     public void DisabledColliders()
     {
+        Invoke("Punish", 5);
         foreach (var item in handColliders)
         {
             item.enabled=false;
         }
         GameObject.FindGameObjectWithTag("MainPlayer").GetComponent<FPC_Motion>().enabled=false;
-        Invoke("Punish",5);
+        
     }
 
     public void EnabledDelay()

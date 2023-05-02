@@ -1050,8 +1050,8 @@ MonoBehaviour:
   team2Players: []
   maxTeamSize: 3
   maxPlayers: 6
-  Team1Prefab: {fileID: 3062159612666844371, guid: a199473846d209f429dc574894b6e983, type: 3}
-  Team2Prefab: {fileID: 3062159612666844371, guid: ab67ff5dadd55ae41b82a78611a3c04a, type: 3}
+  Team1Prefab: {fileID: 3062159612666844371, guid: 26af06f321a278a40b578fc7e0a06045, type: 3}
+  Team2Prefab: {fileID: 3062159612666844371, guid: 00f94d50c4b754949a1f1423ee549145, type: 3}
   team1Spawns:
   - {fileID: 172311111}
   - {fileID: 57095629}
@@ -1067,7 +1067,7 @@ MonoBehaviour:
   - {fileID: 443196797}
   - {fileID: 734466456}
   network: {fileID: 0}
-  hands: {fileID: 0}
+  hands: {fileID: 2100000, guid: 26033e118717c8d40b3479898b083959, type: 2}
 --- !u!114 &232731200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2195,7 +2195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 0}
-  Hand: {fileID: 0}
+  Hand: {fileID: 2100000, guid: 26033e118717c8d40b3479898b083959, type: 2}
 --- !u!1 &591644678
 GameObject:
   m_ObjectHideFlags: 0
