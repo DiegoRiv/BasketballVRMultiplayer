@@ -550,6 +550,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12fbbb1fb3bdddb4cac428b83d4707ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomsList:
+  - RoomName: 1v1
+    maxNumPlayers: 2
+    sceneIndex: 1
+  - RoomName: 2v2
+    maxNumPlayers: 4
+    sceneIndex: 2
+  - RoomName: 3v3
+    maxNumPlayers: 6
+    sceneIndex: 3
+  SceneIndex: 1
 --- !u!65 &152080676
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1386,9 +1397,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 542932238}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdaae7ac74498cb4a8ea77f7675a94ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 12fbbb1fb3bdddb4cac428b83d4707ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomsList:
+  - RoomName: 1v1
+    maxNumPlayers: 2
+    sceneIndex: 1
+  - RoomName: 2v2
+    maxNumPlayers: 4
+    sceneIndex: 2
+  - RoomName: 3v3
+    maxNumPlayers: 6
+    sceneIndex: 3
+  SceneIndex: 2
 --- !u!65 &554692950
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2636,7 +2658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 3062159612666844371, guid: 44e4e78535162154d9d2f3c3e3b88f2a, type: 3}
-  Hand: {fileID: 0}
+  Hand: {fileID: 2100000, guid: 26033e118717c8d40b3479898b083959, type: 2}
 --- !u!4 &1232577725
 Transform:
   m_ObjectHideFlags: 0
@@ -4597,9 +4619,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1421442862}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0498cffca850bec4eaedfe19fceeaf95, type: 3}
+  m_Script: {fileID: 11500000, guid: 12fbbb1fb3bdddb4cac428b83d4707ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomsList:
+  - RoomName: 1v1
+    maxNumPlayers: 2
+    sceneIndex: 1
+  - RoomName: 2v2
+    maxNumPlayers: 4
+    sceneIndex: 2
+  - RoomName: 3v3
+    maxNumPlayers: 6
+    sceneIndex: 3
+  SceneIndex: 3
 --- !u!65 &1432106689
 BoxCollider:
   m_ObjectHideFlags: 0

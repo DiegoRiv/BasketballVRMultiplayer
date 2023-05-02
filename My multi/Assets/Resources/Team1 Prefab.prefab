@@ -64,7 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handColliders: []
-  XRIM: []
+  XRIN: {fileID: 0}
 --- !u!114 &7660312367826971001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -943,7 +943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handColliders: []
-  XRIM: []
+  XRIN: {fileID: 0}
 --- !u!114 &2645617708003851871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1271,7 +1271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handColliders: []
-  XRIM: []
+  XRIN: {fileID: 0}
 --- !u!114 &2845426057370298391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1672,7 +1672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handColliders: []
-  XRIM: []
+  XRIN: {fileID: 0}
 --- !u!4 &818030695296328277 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7633191943669604095, guid: 77459436eeb3aeb48871d657bcb5fd7f, type: 3}

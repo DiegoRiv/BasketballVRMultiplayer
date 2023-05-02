@@ -1266,8 +1266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handColliders: []
-  Left: {fileID: 0}
-  Right: {fileID: 0}
+  XRIN: {fileID: 0}
 --- !u!1001 &7112504549231574186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1616,8 +1615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handColliders: []
-  Left: {fileID: 0}
-  Right: {fileID: 0}
+  XRIN: {fileID: 0}
 --- !u!4 &818030695296328277 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7633191943669604095, guid: 77459436eeb3aeb48871d657bcb5fd7f, type: 3}
