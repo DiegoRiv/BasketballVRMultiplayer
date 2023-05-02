@@ -2636,6 +2636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 3062159612666844371, guid: 44e4e78535162154d9d2f3c3e3b88f2a, type: 3}
+  Hand: {fileID: 0}
 --- !u!4 &1232577725
 Transform:
   m_ObjectHideFlags: 0
@@ -5528,7 +5529,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9163668015072076387, guid: 03f5069b90d512b40b89ed49de002e89, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.049999952
+      value: 0.46
       objectReference: {fileID: 0}
     - target: {fileID: 9163668015072076387, guid: 03f5069b90d512b40b89ed49de002e89, type: 3}
       propertyPath: m_LocalPosition.z
