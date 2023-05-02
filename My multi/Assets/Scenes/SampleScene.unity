@@ -610,10 +610,9 @@ Transform:
   - {fileID: 1833117236}
   - {fileID: 1869623943}
   - {fileID: 1764858550}
-  - {fileID: 319977904}
   - {fileID: 1745054451}
   m_Father: {fileID: 1565731968}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &126596410 stripped
 Transform:
@@ -1049,8 +1048,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319977903}
-  m_LocalRotation: {x: -0.40821788, y: 0.23456968, z: -0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: -154.57574, y: 82.940346, z: 27.428926}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.522507, y: 33.98726, z: -49.495213}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1061,8 +1060,8 @@ Transform:
   - {fileID: 730367783}
   - {fileID: 273597593}
   - {fileID: 2126349842}
-  m_Father: {fileID: 109701324}
-  m_RootOrder: 7
+  m_Father: {fileID: 1565731968}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &335899104
 GameObject:
@@ -4822,7 +4821,7 @@ MonoBehaviour:
   Team2S: {fileID: 1422314753}
   Team1S2: {fileID: 1904906748}
   Team2S2: {fileID: 1457346455}
-  control: {fileID: 0}
+  control: {fileID: 232731200}
   num: 1
   Bcollider: {fileID: 0}
   ChildCollider: {fileID: 0}
@@ -5159,7 +5158,7 @@ Transform:
   - {fileID: 1826808315}
   - {fileID: 808622944}
   m_Father: {fileID: 1565731968}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1457346453
 GameObject:
@@ -6693,6 +6692,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 319977904}
   - {fileID: 109701324}
   - {fileID: 1436818667}
   m_Father: {fileID: 0}
@@ -7497,7 +7497,7 @@ Transform:
   - {fileID: 1142633883}
   - {fileID: 702886626}
   m_Father: {fileID: 109701324}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1764858550 stripped
 Transform:
