@@ -15,12 +15,14 @@ public class Restart : MonoBehaviour
     private PhotonView pView;
     public GameControl control;
     public int num;
+    public AudioSource scoreClip;
     [SerializeField]private Collider Bcollider;
     [SerializeField]private Collider ChildCollider;
 
     void Start()
     {
         pView=GetComponent<PhotonView>();
+        scoreClip=GetComponent<AudioSource>();
         Invoke("Match",3);
         control= GameObject.FindGameObjectWithTag("GameController").GetComponent<GameControl>();
         Bcollider= GetComponent<Collider>();
@@ -42,7 +44,7 @@ public class Restart : MonoBehaviour
         if(other.transform.CompareTag("Ball"))
         {
             other.gameObject.transform.position=Respawn.position;
-
+            StartCoroutine(AudioScore());
             if(num ==0)
             {
                if(pView.IsMine)
@@ -91,5 +93,11 @@ public class Restart : MonoBehaviour
     {
             GameObject ball = GameObject.FindGameObjectWithTag("Ball");
             ball.gameObject.transform.position=Respawn.position;
+    }
+    IEnumerator AudioScore()
+    {
+        scoreClip.Play();
+        yield return new WaitForSeconds(3f);
+        scoreClip.Stop();
     }
 }

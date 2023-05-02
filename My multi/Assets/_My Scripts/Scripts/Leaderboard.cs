@@ -16,12 +16,14 @@ public class Leaderboard : MonoBehaviourPunCallbacks
     public Transform[] team1Spawns;
     public Transform[] team2Spawns;
     public NetworkManager network;
+    Scene sceneName;
 
     public override void OnJoinedRoom()
     {
+        sceneName= SceneManager.GetActiveScene();
         base.OnJoinedRoom();
         
-        if(PhotonNetwork.PlayerList.Length <=maxPlayers)
+        if(PhotonNetwork.PlayerList.Length <=maxPlayers && sceneName.name !="Lobby")
         {
        
         PhotonNetwork.NickName = "Player "+PhotonNetwork.PlayerList.Length+"."+Random.Range(0,500);
@@ -41,15 +43,13 @@ public class Leaderboard : MonoBehaviourPunCallbacks
             network.playerPrefab=Team2Prefab;
             
         }
-        else
-        {
-            BalanceTeams(num);
-        }
         photonView.RPC("SyncPlayers",RpcTarget.AllBuffered,team1Players.ToArray(),team2Players.ToArray());
         if(PhotonNetwork.PlayerList.Length == maxPlayers)
         {
            GameObject noise = GameObject.FindGameObjectWithTag("Start");
            GameObject ball = GameObject.FindGameObjectWithTag("Ball");
+           GameObject timer= GameObject.FindGameObjectWithTag("Timer");
+           timer.BroadcastMessage("StartGame",SendMessageOptions.DontRequireReceiver);
            noise.BroadcastMessage("Relocate",SendMessageOptions.DontRequireReceiver);
            ball.BroadcastMessage("StartMatch",SendMessageOptions.DontRequireReceiver);
         }
@@ -60,22 +60,6 @@ public class Leaderboard : MonoBehaviourPunCallbacks
             PhotonNetwork.LoadLevel(0);
         }
     }
-    private void BalanceTeams(int pick)
-    {
-        if(pick==1)
-        {
-            team1Players.Add(PhotonNetwork.LocalPlayer.NickName);
-            Team1Prefab= PhotonNetwork.Instantiate("Team1 Prefab",team1Spawns[Random.Range(0,team1Spawns.Length)].position,team1Spawns[Random.Range(0,team1Spawns.Length)].rotation);
-            network.playerPrefab= Team1Prefab;
-        }
-        else if(pick ==0)
-        {
-            team2Players.Add(PhotonNetwork.LocalPlayer.NickName);
-            Team1Prefab= PhotonNetwork.Instantiate("Team2 Prefab",team2Spawns[Random.Range(0,team2Spawns.Length)].position,team2Spawns[Random.Range(0,team2Spawns.Length)].rotation);
-            network.playerPrefab=Team2Prefab;
-        }
-        
-    }
 
 
     [PunRPC]
@@ -83,6 +67,13 @@ public class Leaderboard : MonoBehaviourPunCallbacks
     {
         team1Players= new List<string>(team1);
         team1Players = new List<string>(team2);
+    }
+
+    IEnumerator EndMatch()
+    {
+        yield return new WaitForSeconds(5);
+        PhotonNetwork.LeaveRoom();
+        PhotonNetwork.LoadLevel(0);
     }
 }
 

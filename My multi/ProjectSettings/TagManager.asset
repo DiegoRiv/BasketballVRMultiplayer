@@ -12,6 +12,9 @@ TagManager:
   - Start
   - Manager
   - Hoops
+  - Bullet
+  - Timer
+  - Game Over
   layers:
   - Default
   - TransparentFX

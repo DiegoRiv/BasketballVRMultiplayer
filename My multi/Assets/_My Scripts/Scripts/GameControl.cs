@@ -10,7 +10,7 @@ public class GameControl : MonoBehaviourPunCallbacks
     private PhotonView pView;
     public int Team1=0;
     public int Team2=0;
-    public int MaxPlayers =2;
+
 
 
     void Awake() 
@@ -29,5 +29,14 @@ public class GameControl : MonoBehaviourPunCallbacks
         pView=GetComponent<PhotonView>();
     }
 
-
+    void Update()
+    {
+        if(Team1==7 || Team2==7)
+        {
+            GameObject control = GameObject.FindGameObjectWithTag("GameController");
+            GameObject GG = GameObject.FindGameObjectWithTag("Game Over");
+            GG.BroadcastMessage("GameOver",SendMessageOptions.DontRequireReceiver);
+            control.BroadcastMessage("EndMatch",SendMessageOptions.DontRequireReceiver);
+        }
+    }
 }

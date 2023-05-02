@@ -6,9 +6,12 @@ using Photon.Realtime;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR;
 using Unity.XR.CoreUtils;
+using UnityEngine.SceneManagement;
 
 public class NetworkPlayer : MonoBehaviourPunCallbacks
 {
+    //Scene Index
+    Scene sceneName;
     private PhotonView pView;
     private XROrigin playerRig;
     public Transform VRHelmet, lHandCtrl, rHandCtrl;    // Player controller components
@@ -20,6 +23,7 @@ public class NetworkPlayer : MonoBehaviourPunCallbacks
 
     void Start()
     {
+        sceneName = SceneManager.GetActiveScene();
         pView = GetComponent<PhotonView>();
         XROrigin playerRig = FindObjectOfType<XROrigin>();
         VRHelmet = playerRig.transform.Find("Camera Offset/Main Camera");
@@ -32,6 +36,10 @@ public class NetworkPlayer : MonoBehaviourPunCallbacks
             body.gameObject.SetActive(false);
             //lHand.gameObject.SetActive(false);
             //rHand.gameObject.SetActive(false);
+        }
+        if(sceneName.name == "Lobby")
+        {
+            body.GetComponent<Renderer>().material.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
         }
         
     }

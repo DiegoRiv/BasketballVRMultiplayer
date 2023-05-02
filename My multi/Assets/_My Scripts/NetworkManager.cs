@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.SceneManagement;
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
     public GameObject playerPrefab;
+    Scene sceneName;
 
     void Start()
     {
         PhotonNetwork.ConnectUsingSettings();
         print("Trying to connect to the server");
+        sceneName= SceneManager.GetActiveScene();
     }
 
     public override void OnConnectedToMaster()
@@ -30,9 +33,12 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         base.OnJoinedRoom();
         print("Joined room");
+        if(sceneName.name=="Lobby")
+        {
+            playerPrefab = PhotonNetwork.Instantiate("Network Player", transform.position, transform.rotation);
+        }
         //PhotonNetwork.NickName = "Player "+PhotonNetwork.PlayerList.Length+"."+Random.Range(0,500);
         //print(PhotonNetwork.NickName+" has entered");
-        //playerPrefab = PhotonNetwork.Instantiate("Network Player", transform.position, transform.rotation);
         // print("New player has entered the room");
     }
 
