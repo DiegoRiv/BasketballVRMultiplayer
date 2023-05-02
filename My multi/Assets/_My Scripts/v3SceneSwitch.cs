@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class v3SceneSwitch : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    void OnTriggerEnter(Collider c)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (c.transform.tag.Equals("Player"))
+        {
+            print("selected 3v3");
+            SceneManager.LoadScene("v3Scene");
+        }
     }
 }
