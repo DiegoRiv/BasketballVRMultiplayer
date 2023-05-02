@@ -5,12 +5,15 @@ using UnityEngine;
 public class HandScripts : MonoBehaviour
 {
     public Collider[] handColliders;
-    public XRGrabInteractableNetwork ball;
+    public Collider Left;
+    public Collider Right;
     void Start()
     {
 
        handColliders= GetComponentsInChildren<Collider>();
-       ball=GameObject.FindGameObjectWithTag("Ball").GetComponent<XRGrabInteractableNetwork>();
+       Left=GameObject.FindGameObjectWithTag("Left").GetComponent<Collider>();
+       Right=GameObject.FindGameObjectWithTag("Left").GetComponent<Collider>();
+       
     }
 
     public void EnableColliders()
@@ -42,8 +45,10 @@ public class HandScripts : MonoBehaviour
     }
     IEnumerator ReturnDirect()
     {
-        ball.enabled=false;
+        Left.enabled=false;
+        Right.enabled=false;
         yield return new WaitForSeconds(5f);
-        ball.enabled=true;
+        Left.enabled=true;
+        Right.enabled=true;
     }
 }
