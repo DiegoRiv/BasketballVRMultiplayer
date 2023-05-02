@@ -385,9 +385,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3062159612666844368}
-  - component: {fileID: -5949646655613980356}
   - component: {fileID: 7170847152149143012}
   - component: {fileID: 2348423385083038637}
+  - component: {fileID: -3503509124764021682}
   m_Layer: 6
   m_Name: Team1 Prefab
   m_TagString: Untagged
@@ -416,27 +416,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-5949646655613980356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3062159612666844371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa169f4a86f14af4582e33fd43a0478e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  VRHelmet: {fileID: 0}
-  lHandCtrl: {fileID: 0}
-  rHandCtrl: {fileID: 0}
-  head: {fileID: 1605710318463324945}
-  body: {fileID: 7377613330243269224}
-  lHand: {fileID: 4500135120718156477}
-  rHand: {fileID: 7164512783937086164}
-  leftAnimator: {fileID: 727953585249352695}
-  rightAnimator: {fileID: 8966273187628047549}
 --- !u!114 &7170847152149143012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -485,6 +464,27 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &-3503509124764021682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3062159612666844371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26b6040df88587746a2564a7d5bab377, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VRHelmet: {fileID: 0}
+  lHandCtrl: {fileID: 0}
+  rHandCtrl: {fileID: 0}
+  head: {fileID: 1605710318463324945}
+  body: {fileID: 7377613330243269224}
+  lHand: {fileID: 4500135120718156477}
+  rHand: {fileID: 7164512783937086164}
+  leftAnimator: {fileID: 727953585249352695}
+  rightAnimator: {fileID: 8966273187628047549}
 --- !u!1 &3062159613291401063
 GameObject:
   m_ObjectHideFlags: 0
