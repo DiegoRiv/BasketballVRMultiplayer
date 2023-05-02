@@ -30,8 +30,8 @@ public class NetworkPlayer2 : MonoBehaviourPunCallbacks
         {
             head.gameObject.SetActive(false);
             body.gameObject.SetActive(false);
-            lHand.gameObject.SetActive(false);
-            rHand.gameObject.SetActive(false);
+            //lHand.gameObject.SetActive(false);
+            //rHand.gameObject.SetActive(false);
         }
         
     }
