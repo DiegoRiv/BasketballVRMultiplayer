@@ -18,9 +18,9 @@ public class Timer : MonoBehaviour
     }
     void StartGame()
     {
-        StartCoroutine(StartTimer());
+        pVIew.RPC("StartTimer",RpcTarget.All);
     }
-
+    [PunRPC]
     IEnumerator StartTimer()
     {
         yield return new WaitForSeconds(1f);
@@ -41,6 +41,7 @@ public class Timer : MonoBehaviour
             StartCoroutine(StartTimer());
         }
     }
+
     void UIChangeTimer(float Timer)
     {
         float minutes = Mathf.FloorToInt(Timer / 60);

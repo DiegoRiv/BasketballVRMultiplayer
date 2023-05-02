@@ -1049,7 +1049,7 @@ MonoBehaviour:
   team1Players: []
   team2Players: []
   maxTeamSize: 1
-  maxPlayers: 1
+  maxPlayers: 2
   Team1Prefab: {fileID: 3062159612666844371, guid: a199473846d209f429dc574894b6e983, type: 3}
   Team2Prefab: {fileID: 3062159612666844371, guid: ab67ff5dadd55ae41b82a78611a3c04a, type: 3}
   team1Spawns:
@@ -1114,8 +1114,7 @@ Transform:
   m_LocalPosition: {x: 11.272495, y: 1.1139944, z: 4.520602}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1334212178}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4295,7 +4294,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1290489149
 AudioSource:
@@ -4528,6 +4527,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1334212178}
   - component: {fileID: 1334212179}
+  - component: {fileID: 1334212180}
   m_Layer: 0
   m_Name: Timer
   m_TagString: Timer
@@ -4542,13 +4542,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1334212177}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 11.272495, y: 1.1139944, z: 4.520602}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 232731202}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1334212179
 MonoBehaviour:
@@ -4564,6 +4564,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 11
   timerText: {fileID: 1444843180}
+--- !u!114 &1334212180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334212177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 2
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 8
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &1335186293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6921,23 +6943,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9163668015072076387, guid: 03f5069b90d512b40b89ed49de002e89, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.95806634
       objectReference: {fileID: 0}
     - target: {fileID: 9163668015072076387, guid: 03f5069b90d512b40b89ed49de002e89, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.28654662
       objectReference: {fileID: 0}
     - target: {fileID: 9163668015072076387, guid: 03f5069b90d512b40b89ed49de002e89, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9163668015072076387, guid: 03f5069b90d512b40b89ed49de002e89, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9163668015072076387, guid: 03f5069b90d512b40b89ed49de002e89, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -33.303
       objectReference: {fileID: 0}
     - target: {fileID: 9163668015072076387, guid: 03f5069b90d512b40b89ed49de002e89, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -9180,7 +9202,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2113578069
 MonoBehaviour:

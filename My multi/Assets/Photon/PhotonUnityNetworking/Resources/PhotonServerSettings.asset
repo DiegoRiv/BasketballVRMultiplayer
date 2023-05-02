@@ -47,6 +47,8 @@ MonoBehaviour:
   - EnabledColliders
   - StartMatch
   - StartGame
+  - SyncTime
+  - StartTimer
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
