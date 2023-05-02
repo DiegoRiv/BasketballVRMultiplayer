@@ -9,8 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Lobby.unity
     guid: 8b776ed900696e34b9258c1da7706527
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/v1Scene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/v2Scene.unity
+    guid: 2bf743e4ea0c5a042bd49cfa7d0a51f2
+  - enabled: 1
+    path: Assets/Scenes/v3Scene.unity
+    guid: ab4c6e0339c40ff4e867bd0b95f0df3c
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 070e36d008f51e24fae44502ed12eda0, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 0e8afaea76aa61b46be12429611f525f, type: 2}

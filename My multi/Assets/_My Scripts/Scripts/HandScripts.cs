@@ -5,15 +5,14 @@ using UnityEngine;
 public class HandScripts : MonoBehaviour
 {
     public Collider[] handColliders;
-    public bool control;
-    public PlayerMovementCtrl PMC;
+    public XRGrabInteractableNetwork ball;
     void Start()
     {
+
        handColliders= GetComponentsInChildren<Collider>();
-        PMC= GameObject.FindGameObjectWithTag("MainPlayer").GetComponent<PlayerMovementCtrl>();
+       ball=GameObject.FindGameObjectWithTag("Ball").GetComponent<XRGrabInteractableNetwork>();
     }
 
-    // Update is called once per frame
     public void EnableColliders()
     {
         foreach (var item in handColliders)
@@ -24,18 +23,27 @@ public class HandScripts : MonoBehaviour
 
     public void DisabledColliders()
     {
-        control=true;
         foreach (var item in handColliders)
         {
             item.enabled=false;
         }
-        PMC.state=control;
+        GameObject.FindGameObjectWithTag("MainPlayer").GetComponent<FPC_Motion>().enabled=false;
+        Invoke("Punish",5);
     }
 
     public void EnabledDelay()
     {
-        control=false;
         Invoke("EnableColliders",0.5f);
-        PMC.state=control;
+        GameObject.FindGameObjectWithTag("MainPlayer").GetComponent<FPC_Motion>().enabled=true;
+    }
+    public void Punish()
+    {
+        StartCoroutine(ReturnDirect());
+    }
+    IEnumerator ReturnDirect()
+    {
+        ball.enabled=false;
+        yield return new WaitForSeconds(5f);
+        ball.enabled=true;
     }
 }

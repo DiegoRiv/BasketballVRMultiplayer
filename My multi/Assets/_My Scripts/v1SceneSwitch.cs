@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class v1SceneSwitch : MonoBehaviour
 {
-    void OnCollisionEnter(Collision c)
+    private void OnTriggerEnter(Collider c) 
     {
-        if (c.transform.tag.Equals("gameType"))
+        if (c.transform.tag.Equals("MainPlayer"))
         {
             SceneManager.LoadScene("v1Scene");
         }

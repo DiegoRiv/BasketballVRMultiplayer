@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
     public GameObject playerPrefab;
+    public Material Hand;
     Scene sceneName;
 
     void Start()

@@ -17,6 +17,7 @@ public class Leaderboard : MonoBehaviourPunCallbacks
     public Transform[] team2Spawns;
     public NetworkManager network;
     Scene sceneName;
+    public Material hands;
 
     public override void OnJoinedRoom()
     {
@@ -35,12 +36,14 @@ public class Leaderboard : MonoBehaviourPunCallbacks
             team1Players.Add(PhotonNetwork.LocalPlayer.NickName);
             Team1Prefab= PhotonNetwork.Instantiate("Team1 Prefab",team1Spawns[Random.Range(0,team1Spawns.Length)].position,team1Spawns[Random.Range(0,team1Spawns.Length)].rotation);
             network.playerPrefab= Team1Prefab;
+            hands.color= new Color(0.3490196f,0f,0f);
         }
         else if(PhotonNetwork.PlayerList.Length%2!=0)
         {
             team2Players.Add(PhotonNetwork.LocalPlayer.NickName);
             Team1Prefab= PhotonNetwork.Instantiate("Team2 Prefab",team2Spawns[Random.Range(0,team2Spawns.Length)].position,team2Spawns[Random.Range(0,team2Spawns.Length)].rotation);
             network.playerPrefab=Team2Prefab;
+            hands.color= new Color(0.1372549f, 0.4980392f, 0.09019608f);
             
         }
         photonView.RPC("SyncPlayers",RpcTarget.AllBuffered,team1Players.ToArray(),team2Players.ToArray());
