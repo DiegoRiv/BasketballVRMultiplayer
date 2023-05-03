@@ -19,9 +19,11 @@ public class v1SceneSwitch : MonoBehaviourPunCallbacks
     {
         if (c.transform.tag.Equals("MainPlayer"))
         {
-            SetupRoom(SceneIndex);
+            SceneManager.LoadScene("v1Scene");
+            //SetupRoom(SceneIndex);
         }
     }
+    /*
     public void SetupRoom(int roomIndex)
     {
         PhotonNetwork.AutomaticallySyncScene = false;
@@ -33,5 +35,5 @@ public class v1SceneSwitch : MonoBehaviourPunCallbacks
         options.IsOpen = true;
         options.IsVisible = true;
         PhotonNetwork.JoinOrCreateRoom(roomsList[roomIndex].RoomName, options, TypedLobby.Default);
-    }
+    }*/
 }
