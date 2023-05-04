@@ -1049,7 +1049,7 @@ MonoBehaviour:
   team1Players: []
   team2Players: []
   maxTeamSize: 1
-  maxPlayers: 1
+  maxPlayers: 2
   team1Spawns:
   - {fileID: 172311111}
   - {fileID: 57095629}

@@ -67,7 +67,7 @@ public class Leaderboard : MonoBehaviourPunCallbacks
     {
         if(SceneManager.GetActiveScene().buildIndex!=0)
         {
-            if( PhotonNetwork.CurrentRoom.PlayerCount == maxPlayers)
+            if( PhotonNetwork.CurrentRoom.PlayerCount == PhotonNetwork.CurrentRoom.MaxPlayers)
             {
                 GameObject noise = GameObject.FindGameObjectWithTag("Start");
                 GameObject ball = GameObject.FindGameObjectWithTag("Ball");
