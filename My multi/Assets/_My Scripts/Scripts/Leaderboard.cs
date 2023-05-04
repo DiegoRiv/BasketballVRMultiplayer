@@ -6,17 +6,25 @@ using Photon.Realtime;
 using UnityEngine.SceneManagement;
 
 public class Leaderboard : MonoBehaviourPunCallbacks
-{ 
-   public List<string> team1Players = new List<string>(); 
+{
+    public List<string> team1Players = new List<string>();
     public List<string> team2Players = new List<string>();
-    public int maxTeamSize; 
+    public int maxTeamSize;
     public int maxPlayers;
+    public GameObject Timer;
     private GameObject Team1Prefab;
     private GameObject Team2Prefab;
     public Transform[] team1Spawns;
     public Transform[] team2Spawns;
     public NetworkMan2 network;
     public Material hands;
+    private PhotonView pView;
+
+    void Start()
+    {
+        pView = GetComponent<PhotonView>();
+        Timer.tag = "Timer";
+    }
     
     public override void OnJoinedRoom()
     {
@@ -46,42 +54,46 @@ public class Leaderboard : MonoBehaviourPunCallbacks
                 hands.color= new Color(0.1372549f, 0.4980392f, 0.09019608f);
             
             }
-            photonView.RPC("SyncPlayers",RpcTarget.AllBuffered,team1Players.ToArray(),team2Players.ToArray());
-            if( PhotonNetwork.CurrentRoom.PlayerCount == maxPlayers)
+            //photonView.RPC("SyncPlayers",RpcTarget.AllBuffered,team1Players.ToArray(),team2Players.ToArray());
+            if( PhotonNetwork.CurrentRoom.PlayerCount == 1)
             {
-                GameObject noise = GameObject.FindGameObjectWithTag("Start");
-                GameObject ball = GameObject.FindGameObjectWithTag("Ball");
-                GameObject timer= GameObject.FindGameObjectWithTag("Timer");
-                timer.BroadcastMessage("StartGame",SendMessageOptions.DontRequireReceiver);
-                noise.BroadcastMessage("Relocate",SendMessageOptions.DontRequireReceiver);
-                ball.BroadcastMessage("StartMatch",SendMessageOptions.DontRequireReceiver);
+                if (pView.IsMine)
+                {
+                    pView.RPC("StartGame", RpcTarget.All);
+                    pView.RPC("Relocate", RpcTarget.All);
+                    pView.RPC("StartMatch", RpcTarget.All);
+                    //timer.BroadcastMessage("StartGame", SendMessageOptions.DontRequireReceiver);
+                    //noise.BroadcastMessage("Relocate", SendMessageOptions.DontRequireReceiver);
+                    //ball.BroadcastMessage("StartMatch", SendMessageOptions.DontRequireReceiver);
+                }
             }
             if(PhotonNetwork.PlayerList.Length > maxPlayers)
             {
                 PhotonNetwork.LoadLevel(0);
             } 
         }
-          
+
+        //photonView.RPC("OnPlayerConnected", RpcTarget.AllBuffered, player);
     }
-    public void OnPlayerConnected(NetworkPlayer player) 
+    /*
+    public override void OnPlayerEnteredRoom(Player newPlayer) 
     {
         if(SceneManager.GetActiveScene().buildIndex!=0)
         {
-            if( PhotonNetwork.CurrentRoom.PlayerCount == PhotonNetwork.CurrentRoom.MaxPlayers)
+            if( PhotonNetwork.CurrentRoom.PlayerCount == 1)
             {
-                GameObject noise = GameObject.FindGameObjectWithTag("Start");
-                GameObject ball = GameObject.FindGameObjectWithTag("Ball");
-                GameObject timer= GameObject.FindGameObjectWithTag("Timer");
-                timer.BroadcastMessage("StartGame",SendMessageOptions.DontRequireReceiver);
-                noise.BroadcastMessage("Relocate",SendMessageOptions.DontRequireReceiver);
-                ball.BroadcastMessage("StartMatch",SendMessageOptions.DontRequireReceiver);
+               GameObject noise = GameObject.FindGameObjectWithTag("Start");
+               GameObject ball = GameObject.FindGameObjectWithTag("Ball");
+               GameObject timer = GameObject.FindGameObjectWithTag("Timer");
+               timer.BroadcastMessage("StartGame", SendMessageOptions.DontRequireReceiver);
+               noise.BroadcastMessage("Relocate", SendMessageOptions.DontRequireReceiver);
+               ball.BroadcastMessage("StartMatch", SendMessageOptions.DontRequireReceiver);
             }
             if(PhotonNetwork.PlayerList.Length > maxPlayers)
             {
                 PhotonNetwork.LoadLevel(0);
             }   
-        }  
-    }
+        }  */
 
     
 

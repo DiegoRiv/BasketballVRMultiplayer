@@ -49,6 +49,10 @@ MonoBehaviour:
   - StartGame
   - SyncTime
   - StartTimer
+  - OnPlayerConnected
+  - EndMatch
+  - UIChangeTimer
+  - Relocate
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

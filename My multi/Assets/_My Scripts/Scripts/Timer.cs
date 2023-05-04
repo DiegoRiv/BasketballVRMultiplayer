@@ -16,6 +16,7 @@ public class Timer : MonoBehaviour
     {
         pVIew=GetComponent<PhotonView>();
     }
+    [PunRPC]
     void StartGame()
     {
         pVIew.RPC("StartTimer",RpcTarget.All);

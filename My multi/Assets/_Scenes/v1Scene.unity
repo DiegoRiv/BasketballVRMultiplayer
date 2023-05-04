@@ -1026,7 +1026,7 @@ GameObject:
   - component: {fileID: 232731202}
   - component: {fileID: 232731201}
   - component: {fileID: 232731200}
-  - component: {fileID: 232731199}
+  - component: {fileID: 232731203}
   m_Layer: 0
   m_Name: Game Control
   m_TagString: GameController
@@ -1034,38 +1034,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &232731199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 232731198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dc108c2737464c40a17a25e148358a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  team1Players: []
-  team2Players: []
-  maxTeamSize: 1
-  maxPlayers: 2
-  team1Spawns:
-  - {fileID: 172311111}
-  - {fileID: 57095629}
-  - {fileID: 1019696818}
-  - {fileID: 591644679}
-  - {fileID: 2043550891}
-  - {fileID: 55024399}
-  team2Spawns:
-  - {fileID: 1551105179}
-  - {fileID: 831678414}
-  - {fileID: 575308219}
-  - {fileID: 1948178286}
-  - {fileID: 443196797}
-  - {fileID: 734466456}
-  network: {fileID: 0}
-  hands: {fileID: 2100000, guid: 26033e118717c8d40b3479898b083959, type: 2}
 --- !u!114 &232731200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1117,6 +1085,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &232731203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232731198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dc108c2737464c40a17a25e148358a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team1Players: []
+  team2Players: []
+  maxTeamSize: 1
+  maxPlayers: 1
+  Timer: {fileID: 1334212177}
+  team1Spawns: []
+  team2Spawns: []
+  network: {fileID: 0}
+  hands: {fileID: 2100000, guid: 26033e118717c8d40b3479898b083959, type: 2}
 --- !u!224 &240344705 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5233079007495822342, guid: d4afcd8f447afb94ab19e41525c0cc55, type: 3}
@@ -5413,6 +5402,7 @@ GameObject:
   - component: {fileID: 1290489148}
   - component: {fileID: 1290489149}
   - component: {fileID: 1290489150}
+  - component: {fileID: 1290489151}
   m_Layer: 0
   m_Name: Whistle
   m_TagString: Start
@@ -5544,6 +5534,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   whistle: {fileID: 1290489149}
+--- !u!114 &1290489151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290489147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 9
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1327280024
 GameObject:
   m_ObjectHideFlags: 0
@@ -6584,6 +6596,7 @@ GameObject:
   - component: {fileID: 1444843179}
   - component: {fileID: 1444843181}
   - component: {fileID: 1444843180}
+  - component: {fileID: 1444843182}
   m_Layer: 0
   m_Name: Timer
   m_TagString: Untagged
@@ -6708,6 +6721,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1444843178}
   m_CullTransparentMesh: 1
+--- !u!114 &1444843182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444843178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 0
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 10
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1457346453
 GameObject:
   m_ObjectHideFlags: 0

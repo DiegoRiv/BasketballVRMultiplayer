@@ -26,7 +26,7 @@ public class NetworkMan2 : MonoBehaviourPunCallbacks
         RoomOptions options = new RoomOptions();
         options.IsOpen = true;
         options.IsVisible = true;
-        options.MaxPlayers = 2;
+        options.MaxPlayers = 1;
         PhotonNetwork.JoinOrCreateRoom("v1", options, TypedLobby.Default);
         print("created 1v1 room");
     }
