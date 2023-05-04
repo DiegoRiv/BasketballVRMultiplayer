@@ -34,8 +34,8 @@ public class NetworkPlayer : MonoBehaviourPunCallbacks
         {
             head.gameObject.SetActive(false);
             body.gameObject.SetActive(false);
-            //lHand.gameObject.SetActive(false);
-            //rHand.gameObject.SetActive(false);
+            lHand.gameObject.SetActive(false);
+            rHand.gameObject.SetActive(false);
         }
         if(buildI == 0)
         {

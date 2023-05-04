@@ -13,6 +13,14 @@ public class BallMovement: MonoBehaviour
         bounce=GetComponent<AudioSource>();
         pview=GetComponent<PhotonView>();
     }
+    private void Update() 
+    {
+        float distance = Vector3.Distance(gameObject.transform.position,Restartpoint.position);
+        if(distance >60)
+        {
+            gameObject.transform.position=Restartpoint.position;
+        }
+    }
     private void OnCollisionEnter(Collision other) 
     {
         bounce.Play();  

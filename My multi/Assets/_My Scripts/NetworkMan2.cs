@@ -36,7 +36,7 @@ public class NetworkMan2 : MonoBehaviourPunCallbacks
     {
         base.OnJoinedRoom();
         print("Joined room");
-        playerPrefab = PhotonNetwork.Instantiate("Network Player", transform.position, transform.rotation);
+        //playerPrefab = PhotonNetwork.Instantiate("Network Player", transform.position, transform.rotation);
         //PhotonNetwork.NickName = "Player "+PhotonNetwork.PlayerList.Length+"."+Random.Range(0,500);
         //print(PhotonNetwork.NickName+" has entered");
         // print("New player has entered the room");

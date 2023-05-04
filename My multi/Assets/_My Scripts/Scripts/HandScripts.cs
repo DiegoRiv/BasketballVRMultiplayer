@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HandScripts : MonoBehaviour
 {
     public Collider[] handColliders;
     public XRGrabInteractableNetwork XRIN;
+    private bool holdBall;
     void Start()
     {
 
        handColliders= GetComponentsInChildren<Collider>();
-       XRIN = GameObject.FindGameObjectWithTag("Ball").GetComponent<XRGrabInteractableNetwork>();
+       if(SceneManager.GetActiveScene().buildIndex!=0)
+       {
+            XRIN = GameObject.FindGameObjectWithTag("Ball").GetComponent<XRGrabInteractableNetwork>();
+       }
        
     }
 
@@ -24,12 +29,13 @@ public class HandScripts : MonoBehaviour
 
     public void DisabledColliders()
     {
-        Invoke("Punish", 5);
+        GameObject.FindGameObjectWithTag("MainPlayer").GetComponent<FPC_Motion>().enabled=false;
         foreach (var item in handColliders)
         {
             item.enabled=false;
         }
-        GameObject.FindGameObjectWithTag("MainPlayer").GetComponent<FPC_Motion>().enabled=false;
+
+        
         
     }
 
