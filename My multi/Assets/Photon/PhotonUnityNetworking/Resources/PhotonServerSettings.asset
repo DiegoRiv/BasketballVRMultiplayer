@@ -16,7 +16,7 @@ MonoBehaviour:
     AppIdRealtime: 85fc083f-8255-47ef-a074-26012a408735
     AppIdFusion: 
     AppIdChat: 
-    AppIdVoice: 
+    AppIdVoice: f5a79362-3d89-4f08-ada7-02e74cb61031
     AppVersion: 
     UseNameServer: 1
     FixedRegion: 
@@ -53,6 +53,9 @@ MonoBehaviour:
   - EndMatch
   - UIChangeTimer
   - Relocate
+  - CantHearYou
+  - ChangeColour
+  - HeresWhy
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
