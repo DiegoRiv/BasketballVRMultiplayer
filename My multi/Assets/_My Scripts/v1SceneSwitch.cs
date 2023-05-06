@@ -4,23 +4,22 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.SceneManagement;
-[System.Serializable]
-public class GameRoomDescription
-{
-    public string RoomName;
-    public int maxNumPlayers;
-    public int sceneIndex;
-}
+
 public class v1SceneSwitch : MonoBehaviourPunCallbacks
 {
-    public List<GameRoomDescription> roomsList;
     public int SceneIndex;
+    public NetworkManager NManage;
+    public GameObject PlayerModel;
+
+    void Start()
+    {
+        NManage=GameObject.FindGameObjectWithTag("Manager").GetComponent<NetworkManager>();
+    }
     private void OnTriggerEnter(Collider c) 
     {
         if (c.transform.tag.Equals("MainPlayer"))
         {
-            SceneManager.LoadScene("v1Scene");
-            //SetupRoom(SceneIndex);
+            NManage.BroadcastMessage("SetupRoom",SceneIndex,SendMessageOptions.DontRequireReceiver);
         }
     }
     /*

@@ -11,90 +11,22 @@ public class Leaderboard : MonoBehaviourPunCallbacks
     public List<string> team2Players = new List<string>();
     public int maxTeamSize;
     public int maxPlayers;
-    public GameObject Timer;
-    private GameObject Team1Prefab;
-    private GameObject Team2Prefab;
-    public Transform[] team1Spawns;
-    public Transform[] team2Spawns;
-    public NetworkMan2 network;
+    //public GameObject Timer;
+    public GameObject Team1Prefab;
+    public GameObject Team2Prefab;
+    private Transform[] team1Spawns;
+    private Transform[] team2Spawns;
+    public NetworkManager network;
+    private GameObject player;
     public Material hands;
     private PhotonView pView;
 
     void Start()
     {
         pView = GetComponent<PhotonView>();
-        Timer.tag = "Timer";
+        network= GameObject.FindGameObjectWithTag("Manager").GetComponent<NetworkManager>();
+        player= GameObject.FindGameObjectWithTag("MainPlayer");
     }
-    
-    public override void OnJoinedRoom()
-    {
-        int build = SceneManager.GetActiveScene().buildIndex;
-        base.OnJoinedRoom();
-        GameObject player= GameObject.FindGameObjectWithTag("MainPlayer");
-        
-        if( PhotonNetwork.CurrentRoom.PlayerCount <maxPlayers+1 && build !=0)
-        {
-       
-            PhotonNetwork.NickName = "Player "+PhotonNetwork.PlayerList.Length+"."+Random.Range(0,500);
-            int num= Random.Range(0,2);
-            network= GameObject.FindGameObjectWithTag("Manager").GetComponent<NetworkMan2>();
-
-            if(PhotonNetwork.CurrentRoom.PlayerCount%2==0)
-            {
-                team1Players.Add(PhotonNetwork.LocalPlayer.NickName);
-                Team1Prefab= PhotonNetwork.Instantiate("Team1 Prefab", player.transform.position,player.transform.rotation);   
-                network.playerPrefab= Team1Prefab;
-                hands.color= new Color(0.3490196f,0f,0f);
-            }
-            else if(PhotonNetwork.CurrentRoom.PlayerCount%2!=0)
-            {
-                team2Players.Add(PhotonNetwork.LocalPlayer.NickName);
-                Team1Prefab= PhotonNetwork.Instantiate("Team2 Prefab", player.transform.position,player.transform.rotation);
-                network.playerPrefab=Team2Prefab;
-                hands.color= new Color(0.1372549f, 0.4980392f, 0.09019608f);
-            
-            }
-            //photonView.RPC("SyncPlayers",RpcTarget.AllBuffered,team1Players.ToArray(),team2Players.ToArray());
-            if( PhotonNetwork.CurrentRoom.PlayerCount == 1)
-            {
-                if (pView.IsMine)
-                {
-                    pView.RPC("StartGame", RpcTarget.All);
-                    pView.RPC("Relocate", RpcTarget.All);
-                    pView.RPC("StartMatch", RpcTarget.All);
-                    //timer.BroadcastMessage("StartGame", SendMessageOptions.DontRequireReceiver);
-                    //noise.BroadcastMessage("Relocate", SendMessageOptions.DontRequireReceiver);
-                    //ball.BroadcastMessage("StartMatch", SendMessageOptions.DontRequireReceiver);
-                }
-            }
-            if(PhotonNetwork.PlayerList.Length > maxPlayers)
-            {
-                PhotonNetwork.LoadLevel(0);
-            } 
-        }
-
-        //photonView.RPC("OnPlayerConnected", RpcTarget.AllBuffered, player);
-    }
-    /*
-    public override void OnPlayerEnteredRoom(Player newPlayer) 
-    {
-        if(SceneManager.GetActiveScene().buildIndex!=0)
-        {
-            if( PhotonNetwork.CurrentRoom.PlayerCount == 1)
-            {
-               GameObject noise = GameObject.FindGameObjectWithTag("Start");
-               GameObject ball = GameObject.FindGameObjectWithTag("Ball");
-               GameObject timer = GameObject.FindGameObjectWithTag("Timer");
-               timer.BroadcastMessage("StartGame", SendMessageOptions.DontRequireReceiver);
-               noise.BroadcastMessage("Relocate", SendMessageOptions.DontRequireReceiver);
-               ball.BroadcastMessage("StartMatch", SendMessageOptions.DontRequireReceiver);
-            }
-            if(PhotonNetwork.PlayerList.Length > maxPlayers)
-            {
-                PhotonNetwork.LoadLevel(0);
-            }   
-        }  */
-
     
 
 
@@ -108,7 +40,7 @@ public class Leaderboard : MonoBehaviourPunCallbacks
     IEnumerator EndMatch()
     {
         yield return new WaitForSeconds(5);
-        PhotonNetwork.LeaveRoom();
+        PhotonNetwork.Disconnect();
         PhotonNetwork.LoadLevel(0);
     }
 }

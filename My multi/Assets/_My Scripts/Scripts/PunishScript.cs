@@ -6,13 +6,6 @@ public class PunishScript : MonoBehaviour
 {
     public XRGrabInteractableNetwork XRIN;
 
-    void Start()
-    {
-        if(SceneManager.GetActiveScene().buildIndex!=0)
-        {
-            XRIN = GameObject.FindGameObjectWithTag("Ball").GetComponent<XRGrabInteractableNetwork>();
-        }
-    }
     public void StartPunish()
     {
         Invoke("Punish",5);
@@ -23,13 +16,14 @@ public class PunishScript : MonoBehaviour
     }
     public void StopPunishment()
     {
+        CancelInvoke();
         StopCoroutine(ReturnDirect());
     }
     IEnumerator ReturnDirect()
     {
-        XRIN.enabled=false;
+        GameObject.FindGameObjectWithTag("Ball").GetComponent<XRGrabInteractableNetwork>().enabled=false;
         yield return new WaitForSeconds(3f);
-        XRIN.enabled=true;
+        GameObject.FindGameObjectWithTag("Ball").GetComponent<XRGrabInteractableNetwork>().enabled=true;
 
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using Photon.Realtime;
 using Photon.Pun;
-public class Restart : MonoBehaviour
+public class Restart : MonoBehaviourPunCallbacks
 {
     public Transform Respawn;
     public TMP_Text Team1S;
@@ -44,12 +44,12 @@ public class Restart : MonoBehaviour
         if(other.transform.CompareTag("Ball"))
         {
             other.gameObject.transform.position=Respawn.position;
-            StartCoroutine(AudioScore());
             if(num ==0)
             {
                if(pView.IsMine)
                {
-                    pView.RPC("UpdateScore",RpcTarget.All,num);   
+                    pView.RPC("UpdateScore",RpcTarget.All,num);
+                    pView.RPC("AudioScore",RpcTarget.All);   
                }
             }
             if(num==1)
@@ -57,6 +57,7 @@ public class Restart : MonoBehaviour
                 if(pView.IsMine)
                 {
                     pView.RPC("UpdateScore",RpcTarget.All,num);   
+                    pView.RPC("AudioScore",RpcTarget.All);
                 }
             }
         }
@@ -74,7 +75,17 @@ public class Restart : MonoBehaviour
             control.Team2+=1;
         }
     }
-    void StartGame()
+    public override void OnJoinedRoom()
+    {
+        base.OnJoinedRoom();
+        if(PhotonNetwork.CurrentRoom.PlayerCount == PhotonNetwork.CurrentRoom.MaxPlayers)
+        {
+            pView.RPC("StartGame",RpcTarget.All);
+        }
+    }
+
+    [PunRPC]
+    public void StartGame()
     {
         Bcollider.enabled=true;
         ChildCollider.enabled=true;
@@ -91,13 +102,20 @@ public class Restart : MonoBehaviour
 
     void Relocate()
     {
-            GameObject ball = GameObject.FindGameObjectWithTag("Ball");
-            ball.gameObject.transform.position=Respawn.position;
+        GameObject ball = GameObject.FindGameObjectWithTag("Ball");
+        ball.gameObject.transform.position=Respawn.position;
     }
-    IEnumerator AudioScore()
+    [PunRPC]
+    void AudioScore()
     {
-        scoreClip.Play();
-        yield return new WaitForSeconds(3f);
+       scoreClip.Play();
+       Invoke("Stop",3);
+    }
+
+    void Stop()
+    {
         scoreClip.Stop();
     }
+
+
 }
