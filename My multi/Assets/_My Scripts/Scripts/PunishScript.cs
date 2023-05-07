@@ -8,7 +8,7 @@ public class PunishScript : MonoBehaviour
 
     public void StartPunish()
     {
-        Invoke("Punish",5);
+        Invoke("Punish",3);
     }
     private void Punish()
     {

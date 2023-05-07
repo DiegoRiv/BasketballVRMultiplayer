@@ -37,9 +37,9 @@ public class NetworkPlayer : MonoBehaviourPunCallbacks
             //lHand.gameObject.SetActive(false);
            //rHand.gameObject.SetActive(false);
         }
-        if(buildI == 0)
+        if(buildI==1)
         {
-            body.GetComponent<Renderer>().material.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+            body.GetComponent<Material>().color = new Color(Random.Range(0f,1f),Random.Range(0f,1f),Random.Range(0f,1f));
         }
         
     }

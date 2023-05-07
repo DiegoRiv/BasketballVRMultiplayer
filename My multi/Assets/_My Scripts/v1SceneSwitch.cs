@@ -9,12 +9,10 @@ public class v1SceneSwitch : MonoBehaviourPunCallbacks
 {
     public int SceneIndex;
     public NetworkManager NManage;
-    public GameObject PlayerModel;
-
-    void Start()
-    {
-        NManage=GameObject.FindGameObjectWithTag("Manager").GetComponent<NetworkManager>();
+    private void Start() {
+        NManage=GameObject.FindGameObjectWithTag("Manager").GetComponent<NetworkManager>();    
     }
+
     private void OnTriggerEnter(Collider c) 
     {
         if (c.transform.tag.Equals("MainPlayer"))

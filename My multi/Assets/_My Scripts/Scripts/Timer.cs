@@ -52,8 +52,7 @@ public class Timer : MonoBehaviourPunCallbacks
         if(PhotonNetwork.CurrentRoom.PlayerCount==PhotonNetwork.CurrentRoom.MaxPlayers)
         {
             StartCoroutine(StartTimer(time));
-            
         }
-        timerText.text=PhotonNetwork.CurrentRoom.MaxPlayers.ToString();
+        timerText.text="Waiting for "+ (PhotonNetwork.CurrentRoom.MaxPlayers-PhotonNetwork.CurrentRoom.PlayerCount);
     }
 }

@@ -25,7 +25,7 @@ public class HandScripts : MonoBehaviour
 
     public void DisabledColliders()
     {
-        GameObject.FindGameObjectWithTag("MainPlayer").GetComponent<FPC_Motion>().enabled=false;
+        //GameObject.FindGameObjectWithTag("MainPlayer").GetComponent<FPC_Motion>().enabled=false;
         foreach (var item in handColliders)
         {
             item.enabled=false;
@@ -38,6 +38,6 @@ public class HandScripts : MonoBehaviour
     public void EnabledDelay()
     {
         Invoke("EnableColliders",0.5f);
-        GameObject.FindGameObjectWithTag("MainPlayer").GetComponent<FPC_Motion>().enabled=true;
+        //GameObject.FindGameObjectWithTag("MainPlayer").GetComponent<FPC_Motion>().enabled=true;
     }
 }

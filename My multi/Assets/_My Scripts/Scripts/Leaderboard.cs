@@ -41,7 +41,7 @@ public class Leaderboard : MonoBehaviourPunCallbacks
     {
         yield return new WaitForSeconds(5);
         PhotonNetwork.Disconnect();
-        PhotonNetwork.LoadLevel(0);
+        PhotonNetwork.LoadLevel(1);
     }
 }
 

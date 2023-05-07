@@ -49,26 +49,32 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         base.OnJoinedRoom();
         print("Joined room");
         Debug.Log(PhotonNetwork.PlayerList);
-        if( PhotonNetwork.CurrentRoom.PlayerCount < PhotonNetwork.CurrentRoom.MaxPlayers+1)
+        if(SceneManager.GetActiveScene().buildIndex==1)
         {
-
-
-            if(PhotonNetwork.CurrentRoom.PlayerCount%2==0)
-            {
-                //team1Players.Add(PhotonNetwork.LocalPlayer.NickName);
-                playerPrefab= PhotonNetwork.Instantiate("Team1 Prefab", transform.position,transform.rotation);   
-                //hands.color= new Color(0.3490196f,0f,0f);
-            }
-            else if(PhotonNetwork.CurrentRoom.PlayerCount%2!=0)
-            {
-                //team2Players.Add(PhotonNetwork.LocalPlayer.NickName);
-                playerPrefab= PhotonNetwork.Instantiate("Team2 Prefab", transform.position,transform.rotation);
-                //hands.color= new Color(0.1372549f, 0.4980392f, 0.09019608f);
-            
-            }
-            //photonView.RPC("SyncPlayers",RpcTarget.AllBuffered,team1Players.ToArray(),team2Players.ToArray());
+            playerPrefab= PhotonNetwork.Instantiate("Network Player", transform.position,transform.rotation);
         }
-        
+        else
+        {
+            if( PhotonNetwork.CurrentRoom.PlayerCount < PhotonNetwork.CurrentRoom.MaxPlayers+1)
+            {
+
+
+                if(PhotonNetwork.CurrentRoom.PlayerCount%2==0)
+                {
+                    //team1Players.Add(PhotonNetwork.LocalPlayer.NickName);
+                    playerPrefab= PhotonNetwork.Instantiate("Team1 Prefab", transform.position,transform.rotation);   
+                    //hands.color= new Color(0.3490196f,0f,0f);
+                }
+                else if(PhotonNetwork.CurrentRoom.PlayerCount%2!=0)
+                {
+                    //team2Players.Add(PhotonNetwork.LocalPlayer.NickName);
+                    playerPrefab= PhotonNetwork.Instantiate("Team2 Prefab", transform.position,transform.rotation);
+                    //hands.color= new Color(0.1372549f, 0.4980392f, 0.09019608f);
+            
+                }
+                //photonView.RPC("SyncPlayers",RpcTarget.AllBuffered,team1Players.ToArray(),team2Players.ToArray());
+            }
+        }
         //PhotonNetwork.NickName = "Player "+PhotonNetwork.PlayerList.Length+"."+Random.Range(0,500);
         //print(PhotonNetwork.NickName+" has entered");
         // print("New player has entered the room");

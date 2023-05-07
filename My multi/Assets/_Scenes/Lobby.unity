@@ -553,7 +553,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneIndex: 0
   NManage: {fileID: 0}
-  PlayerModel: {fileID: 0}
 --- !u!65 &152080676
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6132,51 +6131,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3320588, y: 2.6816218, z: 0.20760834}
   m_Center: {x: 0.829204, y: -0.0057584047, z: 0.010175884}
---- !u!1 &525317390
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 525317392}
-  - component: {fileID: 525317391}
-  m_Layer: 0
-  m_Name: VoiceLogger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &525317391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 525317390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a86f533fd9917dd4da8601e9eb542c96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LogLevel: 2
---- !u!4 &525317392
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 525317390}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &534164545
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6253,7 +6207,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneIndex: 1
   NManage: {fileID: 0}
-  PlayerModel: {fileID: 0}
 --- !u!65 &554692950
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8473,7 +8426,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1232577725}
-  - component: {fileID: 1232577724}
   - component: {fileID: 1232577726}
   m_Layer: 0
   m_Name: Network Manager
@@ -8482,29 +8434,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1232577724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1232577723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36e064735aa67104d800f98391709638, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 0}
-  roomType:
-  - RoomName: 1v1
-    maxNumPlayers: 2
-    sceneIndex: 1
-  - RoomName: 2v2
-    maxNumPlayers: 4
-    sceneIndex: 2
-  - RoomName: 3v3
-    maxNumPlayers: 6
-    sceneIndex: 3
 --- !u!4 &1232577725
 Transform:
   m_ObjectHideFlags: 0
@@ -8529,19 +8458,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1232577723}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Script: {fileID: 11500000, guid: 36e064735aa67104d800f98391709638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents: []
-  sceneViewId: 3092
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
+  playerPrefab: {fileID: 0}
+  roomType:
+  - RoomName: 1v1
+    maxNumPlayers: 2
+    sceneIndex: 1
+  - RoomName: 2v2
+    maxNumPlayers: 4
+    sceneIndex: 2
+  - RoomName: 3v3
+    maxNumPlayers: 6
+    sceneIndex: 3
 --- !u!65 &1238700247
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10859,9 +10789,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12fbbb1fb3bdddb4cac428b83d4707ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneIndex: 2
+  SceneIndex: 3
   NManage: {fileID: 0}
-  PlayerModel: {fileID: 0}
 --- !u!65 &1432106689
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21467,7 +21396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2020378935390170870, guid: 03f5069b90d512b40b89ed49de002e89, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2020395236549721172, guid: 03f5069b90d512b40b89ed49de002e89, type: 3}
       propertyPath: m_Layer
@@ -21719,7 +21648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8174495616844703789, guid: 03f5069b90d512b40b89ed49de002e89, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8174496535281820275, guid: 03f5069b90d512b40b89ed49de002e89, type: 3}
       propertyPath: m_Layer
