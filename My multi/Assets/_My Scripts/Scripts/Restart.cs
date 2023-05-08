@@ -38,7 +38,7 @@ public class Restart : MonoBehaviourPunCallbacks
         Team1S2.text= "Jaspers: "+team1.ToString();
         Team2S.text="Gaels: "+team2.ToString();
         Team2S2.text= "Gaels: "+team2.ToString();
-    }
+    }  
     private void OnCollisionEnter(Collision other) 
     {
         if(other.transform.CompareTag("Ball"))

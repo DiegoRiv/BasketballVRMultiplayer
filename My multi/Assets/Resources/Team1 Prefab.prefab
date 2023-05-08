@@ -140,8 +140,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 222864263817120776}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.00096919, y: -0.017075, z: -0.018575}
+  m_LocalScale: {x: 0.67296, y: 0.67296, z: 0.67296}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 818030695296328277}
@@ -2756,8 +2756,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3062159612666844371}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -15, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1605710318463324945}
@@ -2828,10 +2828,16 @@ MonoBehaviour:
   - {fileID: 8515359037802906090}
   - {fileID: 6871377553106776484}
   - {fileID: 4918350043153536530}
+  - {fileID: 1647832087179516297}
+  - {fileID: 4056017999803479102}
   - {fileID: 149965266140636946}
   - {fileID: 1512452571697169459}
   - {fileID: 2845426057370298391}
   - {fileID: 4941318943758300517}
+  - {fileID: 5356180087053427309}
+  - {fileID: 1615848937056221821}
+  - {fileID: 7070534149115942716}
+  - {fileID: 1836501889401810876}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -2872,8 +2878,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3464500549680075470}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.00096919, y: -0.017075, z: -0.018575}
+  m_LocalScale: {x: 0.67296, y: 0.67296, z: 0.67296}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9020605558321395907}

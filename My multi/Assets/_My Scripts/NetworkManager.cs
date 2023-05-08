@@ -40,6 +40,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public override void OnJoinedLobby()
     {
         base.OnJoinedLobby();
+        playerPrefab = PhotonNetwork.Instantiate("Network Player", transform.position, transform.rotation);
         print("Joined the Lobby");
     }
 
@@ -49,12 +50,12 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         base.OnJoinedRoom();
         print("Joined room");
         Debug.Log(PhotonNetwork.PlayerList);
-        if(SceneManager.GetActiveScene().buildIndex==1)
+        if(SceneManager.GetActiveScene().buildIndex==0)
         {
             playerPrefab= PhotonNetwork.Instantiate("Network Player", transform.position,transform.rotation);
         }
-        else
-        {
+       else 
+       {
             if( PhotonNetwork.CurrentRoom.PlayerCount < PhotonNetwork.CurrentRoom.MaxPlayers+1)
             {
 
