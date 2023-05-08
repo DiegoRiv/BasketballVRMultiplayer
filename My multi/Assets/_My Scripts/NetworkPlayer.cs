@@ -37,10 +37,6 @@ public class NetworkPlayer : MonoBehaviourPunCallbacks
             //lHand.gameObject.SetActive(false);
            //rHand.gameObject.SetActive(false);
         }
-        if(buildI==1)
-        {
-            body.GetComponent<Material>().color = new Color(Random.Range(0f,1f),Random.Range(0f,1f),Random.Range(0f,1f));
-        }
         
     }
     void SetPositionAndRotation(Transform avatarPart, Transform device)

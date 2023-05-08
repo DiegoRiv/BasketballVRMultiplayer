@@ -7,7 +7,6 @@ using Photon.Realtime;
 public class Timer : MonoBehaviourPunCallbacks
 {
     public float time=300f;
-    public int MaxPlayers;
 
     public TextMeshProUGUI timerText; 
 
@@ -26,10 +25,7 @@ public class Timer : MonoBehaviourPunCallbacks
         {
             timerText.text="00:00";
             StopCoroutine(StartTimer(time));
-            GameObject control = GameObject.FindGameObjectWithTag("GameController");
-            GameObject GG = GameObject.FindGameObjectWithTag("Game Over");
-            GG.BroadcastMessage("GameOver",SendMessageOptions.DontRequireReceiver);
-            control.BroadcastMessage("EndMatch",SendMessageOptions.DontRequireReceiver);
+            pVIew.RPC("EndMatch",RpcTarget.AllViaServer);
 
         }
         else
@@ -54,5 +50,18 @@ public class Timer : MonoBehaviourPunCallbacks
             StartCoroutine(StartTimer(time));
         }
         timerText.text="Waiting for "+ (PhotonNetwork.CurrentRoom.MaxPlayers-PhotonNetwork.CurrentRoom.PlayerCount);
+    }
+    
+    [PunRPC]
+
+    void EndMatch()
+    {
+        Invoke("ToLobby",5);
+    }
+
+    void ToLobby()
+    {
+        PhotonNetwork.Disconnect();
+        PhotonNetwork.LoadLevel(0);
     }
 }

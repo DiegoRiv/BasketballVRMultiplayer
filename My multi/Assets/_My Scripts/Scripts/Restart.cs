@@ -117,5 +117,12 @@ public class Restart : MonoBehaviourPunCallbacks
         scoreClip.Stop();
     }
 
+    [PunRPC]
+
+    void EndMatch()
+    {
+        
+    }
+
 
 }

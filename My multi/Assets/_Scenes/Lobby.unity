@@ -8464,7 +8464,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 0}
   roomType:
   - RoomName: 1v1
-    maxNumPlayers: 2
+    maxNumPlayers: 1
     sceneIndex: 1
   - RoomName: 2v2
     maxNumPlayers: 4

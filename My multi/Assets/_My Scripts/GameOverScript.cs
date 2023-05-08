@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
 public class GameOverScript : MonoBehaviour
 {
@@ -10,7 +12,8 @@ public class GameOverScript : MonoBehaviour
     {
         gameOver=GetComponent<AudioSource>();
     }
-    void GameOver()
+    [PunRPC]
+    void EndMatch()
     {
         gameOver.Play();
     }

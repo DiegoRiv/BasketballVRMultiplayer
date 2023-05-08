@@ -31,31 +31,20 @@ public class GameControl : MonoBehaviourPunCallbacks
         pView=GetComponent<PhotonView>();
     }
 
-    void Update()
+    [PunRPC]
+    void EndMatch()
     {
         if (Team1==7)
         {
-            timerText.text = "GAELS WINS!";
-            GameObject control = GameObject.FindGameObjectWithTag("GameController");
-            GameObject GG = GameObject.FindGameObjectWithTag("Game Over");
-            GG.BroadcastMessage("GameOver", SendMessageOptions.DontRequireReceiver);
-            control.BroadcastMessage("EndMatch", SendMessageOptions.DontRequireReceiver);
+            timerText.text = "JASPERS WINS!";
         }
-        if (Team2 == 7)
+        else if (Team2 == 7)
         {
-            timerText.text = "JASPERS WIN!";
-            GameObject control = GameObject.FindGameObjectWithTag("GameController");
-            GameObject GG = GameObject.FindGameObjectWithTag("Game Over");
-            GG.BroadcastMessage("GameOver", SendMessageOptions.DontRequireReceiver);
-            control.BroadcastMessage("EndMatch", SendMessageOptions.DontRequireReceiver);
+            timerText.text = "GAELS WIN!";
         }
-        if (Team1 == 7 && Team2 == 7)
+        else
         {
-            timerText.text = "It's a tie!";
-            GameObject control = GameObject.FindGameObjectWithTag("GameController");
-            GameObject GG = GameObject.FindGameObjectWithTag("Game Over");
-            GG.BroadcastMessage("GameOver", SendMessageOptions.DontRequireReceiver);
-            control.BroadcastMessage("EndMatch", SendMessageOptions.DontRequireReceiver);
+            timerText.text="ITS A TIE";
         }
     }
 }

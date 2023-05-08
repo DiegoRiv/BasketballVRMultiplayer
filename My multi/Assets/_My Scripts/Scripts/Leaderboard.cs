@@ -37,12 +37,6 @@ public class Leaderboard : MonoBehaviourPunCallbacks
         team1Players = new List<string>(team2);
     }
 
-    IEnumerator EndMatch()
-    {
-        yield return new WaitForSeconds(5);
-        PhotonNetwork.Disconnect();
-        PhotonNetwork.LoadLevel(0);
-    }
 }
 
 
