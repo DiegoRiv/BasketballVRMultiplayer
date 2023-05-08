@@ -1371,7 +1371,7 @@ MonoBehaviour:
   runInBackground: 1
   statsResetInterval: 1000
   speakerPrefab: {fileID: 0}
-  primaryRecorder: {fileID: 0}
+  primaryRecorder: {fileID: 401128341}
   usePrimaryRecorder: 0
   Settings:
     AppIdRealtime: 
@@ -5514,7 +5514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd56308c6fbbac74daf789b79808d6f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 10
+  time: 301
   timerText: {fileID: 1444843180}
 --- !u!114 &1334212180
 MonoBehaviour:
